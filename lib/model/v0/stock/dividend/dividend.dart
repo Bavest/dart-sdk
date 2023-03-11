@@ -1,7 +1,6 @@
 /// The [DividendData] data represent the dividend data of a company e.g.
 /// date, recordDate, amount, declarationDate, adjustedAmount, payDate.
 class DividendData {
-
   /// The date of the dividend.
   DateTime? date;
 

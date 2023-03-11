@@ -33,13 +33,13 @@ class PortfolioMetric {
       );
 
   Map<String, dynamic> toJson() => {
-    "beta": beta,
-    "26WeekPriceReturnDaily": the26WeekPriceReturnDaily,
-    "5DayPriceReturnDaily": the5DayPriceReturnDaily,
-    "52WeekPriceReturnDaily": the52WeekPriceReturnDaily,
-    "dividendPerShareAnnual": dividendPerShareAnnual,
-    "treynorQuotient": treynorQuotient,
-    "sharpeRatio": sharpeRatio,
-    "alpha": alpha,
-  };
+        "beta": beta,
+        "26WeekPriceReturnDaily": the26WeekPriceReturnDaily,
+        "5DayPriceReturnDaily": the5DayPriceReturnDaily,
+        "52WeekPriceReturnDaily": the52WeekPriceReturnDaily,
+        "dividendPerShareAnnual": dividendPerShareAnnual,
+        "treynorQuotient": treynorQuotient,
+        "sharpeRatio": sharpeRatio,
+        "alpha": alpha,
+      };
 }

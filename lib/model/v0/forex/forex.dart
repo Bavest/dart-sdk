@@ -1,7 +1,6 @@
 /// The [Forex] data represent the exchange rate of two currencies
 /// e.g. for the exchange rate of EUR to USD.
 class Forex {
-
   /// The success of the request.
   bool? success;
 

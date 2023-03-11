@@ -26,7 +26,6 @@ class SecurityIdentifier {
         wkn: json['wkn'],
       );
 
-
   @override
   String toString() {
     if (symbol != null) {

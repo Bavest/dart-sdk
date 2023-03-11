@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 class CacheManager {
@@ -38,7 +37,7 @@ class CacheManager {
   ///
   /// The [cacheEntry] is the cache entry.
   void addFailed(CacheEntry cacheEntry) {
-    if (failedKeys.indexWhere((e)=>e.cacheKey == cacheEntry.cacheKey) == -1) {
+    if (failedKeys.indexWhere((e) => e.cacheKey == cacheEntry.cacheKey) == -1) {
       failedKeys.add(cacheEntry);
     }
   }

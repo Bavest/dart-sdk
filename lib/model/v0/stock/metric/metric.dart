@@ -1,6 +1,5 @@
 /// The [Metric] data represent the metrics of the company.
 class Metric {
-
   /// The [symbol] data represent the symbol of the company.
   String? symbol;
 
@@ -235,7 +234,8 @@ class Metric {
     netIncomeGrowth = json['netIncomeGrowth']?.toDouble();
     epsgrowth = json['epsgrowth']?.toDouble();
     epsdilutedGrowth = json['epsdilutedGrowth']?.toDouble();
-    weightedAverageSharesGrowth = json['weightedAverageSharesGrowth']?.toDouble();
+    weightedAverageSharesGrowth =
+        json['weightedAverageSharesGrowth']?.toDouble();
     weightedAverageSharesDilutedGrowth =
         json['weightedAverageSharesDilutedGrowth']?.toDouble();
     dividendsperShareGrowth = json['dividendsperShareGrowth']?.toDouble();
@@ -243,13 +243,20 @@ class Metric {
     freeCashFlowGrowth = json['freeCashFlowGrowth']?.toDouble();
     tenYRevenueGrowthPerShare = json['tenYRevenueGrowthPerShare']?.toDouble();
     fiveYRevenueGrowthPerShare = json['fiveYRevenueGrowthPerShare']?.toDouble();
-    threeYRevenueGrowthPerShare = json['threeYRevenueGrowthPerShare']?.toDouble();
-    tenYOperatingCFGrowthPerShare = json['tenYOperatingCFGrowthPerShare']?.toDouble();
-    fiveYOperatingCFGrowthPerShare = json['fiveYOperatingCFGrowthPerShare']?.toDouble();
-    threeYOperatingCFGrowthPerShare = json['threeYOperatingCFGrowthPerShare']?.toDouble();
-    tenYNetIncomeGrowthPerShare = json['tenYNetIncomeGrowthPerShare']?.toDouble();
-    fiveYNetIncomeGrowthPerShare = json['fiveYNetIncomeGrowthPerShare']?.toDouble();
-    threeYNetIncomeGrowthPerShare = json['threeYNetIncomeGrowthPerShare']?.toDouble();
+    threeYRevenueGrowthPerShare =
+        json['threeYRevenueGrowthPerShare']?.toDouble();
+    tenYOperatingCFGrowthPerShare =
+        json['tenYOperatingCFGrowthPerShare']?.toDouble();
+    fiveYOperatingCFGrowthPerShare =
+        json['fiveYOperatingCFGrowthPerShare']?.toDouble();
+    threeYOperatingCFGrowthPerShare =
+        json['threeYOperatingCFGrowthPerShare']?.toDouble();
+    tenYNetIncomeGrowthPerShare =
+        json['tenYNetIncomeGrowthPerShare']?.toDouble();
+    fiveYNetIncomeGrowthPerShare =
+        json['fiveYNetIncomeGrowthPerShare']?.toDouble();
+    threeYNetIncomeGrowthPerShare =
+        json['threeYNetIncomeGrowthPerShare']?.toDouble();
     tenYShareholdersEquityGrowthPerShare =
         json['tenYShareholdersEquityGrowthPerShare']?.toDouble();
     fiveYShareholdersEquityGrowthPerShare =
@@ -303,12 +310,14 @@ class Metric {
     payoutRatio = json['payoutRatio']?.toDouble();
     salesGeneralAndAdministrativeToRevenue =
         json['salesGeneralAndAdministrativeToRevenue']?.toDouble();
-    researchAndDevelopementToRevenue = json['researchAndDevelopementToRevenue']?.toDouble();
+    researchAndDevelopementToRevenue =
+        json['researchAndDevelopementToRevenue']?.toDouble();
     intangiblesToTotalAssets = json['intangiblesToTotalAssets']?.toDouble();
     capexToOperatingCashFlow = json['capexToOperatingCashFlow']?.toDouble();
     capexToRevenue = json['capexToRevenue']?.toDouble();
     capexToDepreciation = json['capexToDepreciation']?.toDouble();
-    stockBasedCompensationToRevenue = json['stockBasedCompensationToRevenue']?.toDouble();
+    stockBasedCompensationToRevenue =
+        json['stockBasedCompensationToRevenue']?.toDouble();
     grahamNumber = json['grahamNumber']?.toDouble();
     roic = json['roic']?.toDouble();
     returnOnTangibleAssets = json['returnOnTangibleAssets']?.toDouble();
@@ -365,10 +374,8 @@ class Metric {
     data['fiveYRevenueGrowthPerShare'] = fiveYRevenueGrowthPerShare;
     data['threeYRevenueGrowthPerShare'] = threeYRevenueGrowthPerShare;
     data['tenYOperatingCFGrowthPerShare'] = tenYOperatingCFGrowthPerShare;
-    data['fiveYOperatingCFGrowthPerShare'] =
-        fiveYOperatingCFGrowthPerShare;
-    data['threeYOperatingCFGrowthPerShare'] =
-        threeYOperatingCFGrowthPerShare;
+    data['fiveYOperatingCFGrowthPerShare'] = fiveYOperatingCFGrowthPerShare;
+    data['threeYOperatingCFGrowthPerShare'] = threeYOperatingCFGrowthPerShare;
     data['tenYNetIncomeGrowthPerShare'] = tenYNetIncomeGrowthPerShare;
     data['fiveYNetIncomeGrowthPerShare'] = fiveYNetIncomeGrowthPerShare;
     data['threeYNetIncomeGrowthPerShare'] = threeYNetIncomeGrowthPerShare;
@@ -425,14 +432,12 @@ class Metric {
     data['payoutRatio'] = payoutRatio;
     data['salesGeneralAndAdministrativeToRevenue'] =
         salesGeneralAndAdministrativeToRevenue;
-    data['researchAndDevelopementToRevenue'] =
-        researchAndDevelopementToRevenue;
+    data['researchAndDevelopementToRevenue'] = researchAndDevelopementToRevenue;
     data['intangiblesToTotalAssets'] = intangiblesToTotalAssets;
     data['capexToOperatingCashFlow'] = capexToOperatingCashFlow;
     data['capexToRevenue'] = capexToRevenue;
     data['capexToDepreciation'] = capexToDepreciation;
-    data['stockBasedCompensationToRevenue'] =
-        stockBasedCompensationToRevenue;
+    data['stockBasedCompensationToRevenue'] = stockBasedCompensationToRevenue;
     data['grahamNumber'] = grahamNumber;
     data['roic'] = roic;
     data['returnOnTangibleAssets'] = returnOnTangibleAssets;

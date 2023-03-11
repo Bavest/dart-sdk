@@ -1,6 +1,5 @@
 /// The [Split] data represent the split of a company.
 class Splits {
-
   /// The [Split] data represent the split of a company.
   List<Split>? split;
 
@@ -30,7 +29,6 @@ class Splits {
 }
 
 class Split {
-
   /// The [date] data represent the date of a split.
   String? date;
 

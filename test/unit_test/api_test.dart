@@ -10,7 +10,7 @@ void main() {
 
   test("Search test", () async {
     /// Search for a symbol
-     await client.search("App");
+    await client.search("App");
   });
 
   test("Stock test", () async {

@@ -319,6 +319,7 @@ class BavestRestClient extends BavestAbstractRestClient {
 
     throw Exception("could not fetch fundamentals for $id");
   }
+
   @override
   Future<Esg> esg(SecurityIdentifier id) async {
     const url = '$_baseUrl/stock/esg';

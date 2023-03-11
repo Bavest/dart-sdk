@@ -5,7 +5,6 @@ import 'package:bavest/model/v0/stock/financials/income.dart';
 /// The [Financials] class is used to store all financials of a stock
 /// e.g. [Balance], [Cashflow], [Income].
 class Financials {
-
   /// The [Balance] class is used to store all balance data of a stock.
   Balance? balance;
 

@@ -3,7 +3,6 @@
 /// isin, is etf, is actively trading, is adr, is fund, currency and market
 /// capitalization.
 class Search {
-
   /// Search request status code.
   int? statusCode;
 
@@ -38,7 +37,6 @@ class Search {
 /// capitalization. By default the results are sorted by market capitalization
 /// and country codes.
 class Results {
-
   /// The symbol of the company.
   String? symbol;
 

@@ -15,7 +15,7 @@ class PortfolioSector {
       );
 
   Map<String, dynamic> toJson() => {
-    "sector": sector,
-    "percentage": percentage,
-  };
+        "sector": sector,
+        "percentage": percentage,
+      };
 }
