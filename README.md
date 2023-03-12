@@ -1,29 +1,28 @@
 <p align="center">
-  <img width="300" alt="posthoglogo" src="https://i.imgur.com/z4ZPmGN.png">
+  <img  src="https://www.bavest.co/images/api-home.png">
 </p>
 
-# Bavest Finance SDK
+# Bavest Python SDK
+
+ <img src="https://img.shields.io/pub/points/bavest"> <img src="https://img.shields.io/pub/likes/bavest" > <img wsymbolth=300 src="https://img.shields.io/badge/license-MIT-brightgreen" > <img wsymbolth=300 src="https://img.shields.io/badge/tests-passing-brightgreen" > <img src="https://img.shields.io/github/issues/Bavest/dart-sdk">
+
 **The Bavest Finance SDK is an open-source library to create finance products in weeks. Bavest offers:**
 
-* Financial api with 99.999% uptime
+* Financial api with 99.95% uptime
 * Easy to integrate and use
 * Free for open-source projects
 
-## Get started for free
 
-### Personal API key
-First, you need to create an account on [Bavest](https://www.dashboard.bavest.com).
-After registration you will find your api key in the dashboard.
+## Get API key
 
+First, you need to create a [Bavest](https://www.dashboard.bavest.com) account.
+After registration, you will find your api key in the dashboard.
 
-### Open-Source projects
-If you are working on an open-source project, you can use the SDK for free.
-Just send us an email to `support@bavest.co` with the following information:
+### Free API key for Open-Source projects
 
-* Your Github username
-* The name of your project
-* The link to your project on Github
-* A description of your project
+First, use the [TypeForm](https://e0nemwrtihz.typeform.com/to/xT8KfS0I) to provide all required information.
+After, you will receive an API key via E-Mail.
+
 
 ### Install the package
 
