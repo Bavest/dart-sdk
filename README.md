@@ -26,7 +26,7 @@ After, you will receive an API key via E-Mail.
 
 ### Install the package
 
-First install the flutter package:
+First install the flutter package, it is available at [pub.dev](https://pub.dev/packages/bavest):
 
  ```dart 
 flutter pub add bavest 
