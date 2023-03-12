@@ -1,3 +1,6 @@
+## 0.0.4
+* Upgrade description in pubspec.yaml
+
 ## 0.0.3
 
 * Update client examples
