@@ -2,7 +2,7 @@
   <img  src="https://www.bavest.co/images/api-home.png">
 </p>
 
-# Bavest Python SDK
+# Bavest Dart SDK
 
  <img src="https://img.shields.io/pub/points/bavest"> <img src="https://img.shields.io/pub/likes/bavest" > <img wsymbolth=300 src="https://img.shields.io/badge/license-MIT-brightgreen" > <img wsymbolth=300 src="https://img.shields.io/badge/tests-passing-brightgreen" > <img src="https://img.shields.io/github/issues/Bavest/dart-sdk">
 
