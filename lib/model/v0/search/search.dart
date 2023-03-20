@@ -1,17 +1,17 @@
-/// The [Search] data represent the search results. The [Search] contain
+/// The [SearchResult] data represent the search results. The [SearchResult] contain
 /// a list of [Results]. The [Results] contain the symbol, company name,
 /// isin, is etf, is actively trading, is adr, is fund, currency and market
 /// capitalization.
-class Search {
+class SearchResult {
   /// Search request status code.
   int? statusCode;
 
   /// Search request results.
   List<Results>? results;
 
-  Search({statusCode, results});
+  SearchResult({statusCode, results});
 
-  Search.fromJson(Map<String, dynamic> json) {
+  SearchResult.fromJson(Map<String, dynamic> json) {
     statusCode = json['statusCode'];
     if (json['results'] != null) {
       results = <Results>[];
@@ -84,7 +84,7 @@ class Results {
     isAdr = json['isAdr'];
     isFund = json['isFund'];
     currency = json['currency'];
-    marketCapitalization = json['marketCapitalization'];
+    marketCapitalization = json['marketCapitalization']?.toDouble();
   }
 
   Map<String, dynamic> toJson() {
