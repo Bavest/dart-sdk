@@ -1,12 +1,10 @@
-import 'dart:math';
-
 import 'package:bavest/bavest.dart';
 import 'package:bavest/model/v0/security/security_identifier.dart';
 import 'package:bavest/model/v0/stock/candle/candle_type.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  var apiKey = "wQWeRd7EmM6rIASAyQnV86nHzusK33ipdxuxzkFh";
+  var apiKey = const String.fromEnvironment('API_KEY');
   var client = BavestRestClient(apiKey);
   final id = SecurityIdentifier(symbol: "AAPL");
 
@@ -45,7 +43,7 @@ void main() {
     final countries = await client.etfCountry(id);
     expect(countries.countryExposure?.isNotEmpty ?? false, true);
 
-    final holdings =  await client.etfHoldings(id);
+    final holdings = await client.etfHoldings(id);
     expect(holdings.holdings?.isNotEmpty ?? false, true);
 
     final etfProfile = await client.etfProfile(id);
