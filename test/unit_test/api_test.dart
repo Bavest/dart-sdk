@@ -1,38 +1,55 @@
+import 'dart:math';
+
 import 'package:bavest/bavest.dart';
 import 'package:bavest/model/v0/security/security_identifier.dart';
 import 'package:bavest/model/v0/stock/candle/candle_type.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  var apiKey = const String.fromEnvironment('API_KEY');
+  var apiKey = "wQWeRd7EmM6rIASAyQnV86nHzusK33ipdxuxzkFh";
   var client = BavestRestClient(apiKey);
   final id = SecurityIdentifier(symbol: "AAPL");
 
   test("Search test", () async {
-    /// Search for a symbol
-    await client.search("App");
+    var search = await client.search("App");
+    expect(search.results!.isNotEmpty, true);
   });
 
   test("Stock test", () async {
-    /// Get stock data
     await client.quote(id);
     await client.profile(id);
     await client.metric(id);
-    await client.dividends(id);
+
+    var dividends = await client.dividends(id);
+    expect(dividends.data?.isNotEmpty ?? false, true);
+
     await client.companyNews(id);
     await client.fundamentals(id);
     await client.peersWidget(id);
-    await client.forex("EUR", "USD");
-    await client.sentiment(id);
-    await client.splits(id, years: 5);
+
+    final Forex forex = await client.forex("EUR", "USD");
+    expect(forex.result != null && forex.result! > 0, true);
+
+    final sentiment = await client.sentiment(id);
+    expect(sentiment.score != null && sentiment.score! > 0, true);
+
+    final splits = await client.splits(id, years: 5);
+    expect(splits.split?.isNotEmpty ?? false, true);
   });
 
   test("Etf test", () async {
     final id = SecurityIdentifier(symbol: "ARKK");
-    await client.etfSector(id);
-    await client.etfCountry(id);
-    await client.etfHoldings(id);
-    await client.etfProfile(id);
+    final sectors = await client.etfSector(id);
+    expect(sectors.sectorExposure?.isNotEmpty ?? false, true);
+
+    final countries = await client.etfCountry(id);
+    expect(countries.countryExposure?.isNotEmpty ?? false, true);
+
+    final holdings =  await client.etfHoldings(id);
+    expect(holdings.holdings?.isNotEmpty ?? false, true);
+
+    final etfProfile = await client.etfProfile(id);
+    expect(etfProfile.profile?.name != null, true);
   });
 
   test("Portfolio test", () async {
