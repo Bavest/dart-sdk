@@ -83,8 +83,8 @@ class BavestRestClient extends BavestAbstractRestClient {
   /// The [params] is a map of the parameters you want to pass to the api.
   ///
   /// It returns a [Response] object.
-  Future<Response?> _post(
-      final String url, final Map<String, dynamic> params) async {
+  Future<Response?> _post(final String url,
+      final Map<String, dynamic> params) async {
     final dio = Dio(BaseOptions(contentType: Headers.jsonContentType, headers: {
       "x-api-key": apiKey,
     }));
@@ -129,7 +129,8 @@ class BavestRestClient extends BavestAbstractRestClient {
       "to": to,
       "resolution": resolution.str,
       "currency": currency ?? "EUR",
-    }..addAll(id.toJson());
+    }
+      ..addAll(id.toJson());
 
     final response = await _post(url, params);
     if (_isSuccess(response)) {
@@ -165,21 +166,23 @@ class BavestRestClient extends BavestAbstractRestClient {
   }
 
   @override
-  Future<List<Dividends>> dividends(SecurityIdentifier id,
+  Future<Dividends> dividends(SecurityIdentifier id,
       {String? currency}) async {
     const url = '$_baseUrl/stock/dividend';
     final params = {
       'currency': currency ?? 'EUR',
-    }..addAll(id.toJson());
+    }
+      ..addAll(id.toJson());
 
     var response = await _post(url, params);
     if (_isSuccess(response)) {
-      List<dynamic> data = jsonDecode(response!.data);
-      return data.map((e) => Dividends.fromJson(e)).toList();
-    }
+      return Dividends.fromJson({
+        "data":jsonDecode(response!.data)
+      });
+      }
 
-    throw Exception("Failed to get dividends for $id");
-  }
+          throw Exception("Failed to get dividends for $id");
+    }
 
   @override
   Future<List<News>> companyNews(SecurityIdentifier id) async {
@@ -199,7 +202,9 @@ class BavestRestClient extends BavestAbstractRestClient {
   Future<Ipo> ipos() async {
     final DateTime c = DateTime.now();
 
-    var from = c.subtract(const Duration(days: 30)).millisecondsSinceEpoch;
+    var from = c
+        .subtract(const Duration(days: 30))
+        .millisecondsSinceEpoch;
     var to = c.millisecondsSinceEpoch;
 
     from = from ~/ 1000;
@@ -243,7 +248,8 @@ class BavestRestClient extends BavestAbstractRestClient {
       "statement": "ic",
       "currency": currency ?? "EUR",
       "freq": freq
-    }..addAll(id.toJson());
+    }
+      ..addAll(id.toJson());
 
     var response = await _post(url, params);
     if (_isSuccess(response)) {
@@ -262,7 +268,8 @@ class BavestRestClient extends BavestAbstractRestClient {
       "statement": "cf",
       "currency": currency ?? "EUR",
       "freq": freq
-    }..addAll(id.toJson());
+    }
+      ..addAll(id.toJson());
 
     var response = await _post(url, params);
     if (_isSuccess(response)) {
@@ -281,7 +288,8 @@ class BavestRestClient extends BavestAbstractRestClient {
       "statement": "bs",
       "currency": currency ?? "EUR",
       "freq": freq
-    }..addAll(id.toJson());
+    }
+      ..addAll(id.toJson());
 
     var response = await _post(url, params);
     if (_isSuccess(response)) {
@@ -336,14 +344,18 @@ class BavestRestClient extends BavestAbstractRestClient {
   @override
   Future<Splits> splits(SecurityIdentifier id, {final int years = 1}) async {
     const url = '$_baseUrl/stock/split';
-    var from = DateTime.now()
+    var from = DateTime
+        .now()
         .subtract(Duration(days: 365 * years))
         .millisecondsSinceEpoch;
-    var to = DateTime.now().millisecondsSinceEpoch;
+    var to = DateTime
+        .now()
+        .millisecondsSinceEpoch;
     final params = {
       'from': from.toString(),
       'to': to.toString(),
-    }..addAll(id.toJson());
+    }
+      ..addAll(id.toJson());
 
     var response = await _post(url, params);
     if (_isSuccess(response)) {
@@ -383,7 +395,7 @@ class BavestRestClient extends BavestAbstractRestClient {
   }
 
   @override
-  Future<List<Search>> search(String query) async {
+  Future<SearchResult> search(String query) async {
     const url = '$_baseUrl/search';
     final params = {
       'query': query,
@@ -391,11 +403,10 @@ class BavestRestClient extends BavestAbstractRestClient {
 
     var response = await _post(url, params);
     if (_isSuccess(response)) {
-      List<dynamic> filteredResults = jsonDecode(response!.data)["results"];
-      return filteredResults.map((e) => Search.fromJson(e)).toList();
+      return SearchResult.fromJson(jsonDecode(response!.data));
     }
 
-    return [];
+    throw Exception("could not receive search result for $query");
   }
 
   @override
@@ -485,7 +496,8 @@ class BavestRestClient extends BavestAbstractRestClient {
   Future<PortfolioMetric> portfolioMetrics(Portfolio portfolio,
       {String currency = 'EUR'}) async {
     const url = '$_baseUrl/portfolio/metrics';
-    final params = portfolio.toJson()..addAll({'currency': currency});
+    final params = portfolio.toJson()
+      ..addAll({'currency': currency});
 
     final response = await _post(url, params);
     if (_isSuccess(response)) {
@@ -499,7 +511,8 @@ class BavestRestClient extends BavestAbstractRestClient {
   Future<List<PortfolioSector>> portfolioSector(Portfolio portfolio,
       {String currency = "EUR"}) async {
     const url = '$_baseUrl/portfolio/sector';
-    final params = portfolio.toJson()..addAll({'currency': currency});
+    final params = portfolio.toJson()
+      ..addAll({'currency': currency});
 
     final response = await _post(url, params);
     if (_isSuccess(response)) {
@@ -519,7 +532,8 @@ class BavestRestClient extends BavestAbstractRestClient {
   Future<Quote> portfolioPrice(Portfolio portfolio,
       {String currency = "EUR"}) async {
     const url = '$_baseUrl/portfolio/price';
-    final params = portfolio.toJson()..addAll({"currency": currency});
+    final params = portfolio.toJson()
+      ..addAll({"currency": currency});
 
     var response = await _post(url, params);
     if (_isSuccess(response)) {
@@ -533,9 +547,9 @@ class BavestRestClient extends BavestAbstractRestClient {
   @override
   Future<Candles> portfolioChart(Portfolio portfolio,
       {String currency = "EUR",
-      required int from,
-      required int to,
-      required CandleResolution resolution}) async {
+        required int from,
+        required int to,
+        required CandleResolution resolution}) async {
     const url = '$_baseUrl/portfolio/chart';
     var params = portfolio.toJson()
       ..addAll({
@@ -557,9 +571,9 @@ class BavestRestClient extends BavestAbstractRestClient {
   @override
   Future<PortfolioStats> portfolioStats(Portfolio portfolio,
       {String currency = "EUR",
-      required int from,
-      required int to,
-      required CandleResolution resolution}) async {
+        required int from,
+        required int to,
+        required CandleResolution resolution}) async {
     const url = '$_baseUrl/portfolio/stats';
     var params = portfolio.toJson()
       ..addAll({

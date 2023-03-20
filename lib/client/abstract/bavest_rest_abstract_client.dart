@@ -71,7 +71,7 @@ abstract class BavestAbstractRestClient {
   /// final client = BavestRestClient(api_key);
   /// final dividends = client.dividends(SecurityIdentifier(symbol: "AAPL"));
   /// ```
-  Future<List<Dividends>> dividends(SecurityIdentifier id, {String? currency});
+  Future<Dividends> dividends(SecurityIdentifier id, {String? currency});
 
   /// The [news] method is used to get the news for a given stock symbol.
   ///
@@ -217,7 +217,7 @@ abstract class BavestAbstractRestClient {
   /// final client = BavestRestClient(api_key);
   /// final search = client.search(SecurityIdentifier(symbol: "AAPL"));
   /// ```
-  Future<List<Search>> search(String query);
+  Future<SearchResult> search(String query);
 
   /// The [etfProfile] method is used to get the ETF profile for a given ETF symbol.
   ///
