@@ -15,7 +15,7 @@
 
 ## Get API key
 
-First, you need to create a [Bavest](https://www.dashboard.bavest.com) account.
+First, you need to create a [Bavest](https://www.dashboard.bavest.co) account.
 After registration, you will find your api key in the dashboard.
 
 ### Free API key for Open-Source projects
