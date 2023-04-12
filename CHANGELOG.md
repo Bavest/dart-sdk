@@ -1,3 +1,6 @@
+## 0.0.6
+* Updated the dashboard link in the README.md
+
 ## 0.0.5
 * Change Dividends and Search signature and encapsulate the response in a class
 * Add Dividends and Search tests

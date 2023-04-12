@@ -1,7 +1,7 @@
 name: bavest
 description: The Bavest SDK for Dart and Flutter provides realtime data for stocks, etfs, mutual fonds.
 
-version: 0.0.5
+version: 0.0.6
 homepage: https://www.bavest.co
 
 environment:
