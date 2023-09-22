@@ -1,3 +1,6 @@
+## 0.0.7
+* Updated dependencies
+
 ## 0.0.6
 * Updated the dashboard link in the README.md
 
